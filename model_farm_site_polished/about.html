@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Model Farm — About</title>
+<meta name="description" content="The story behind Model Farm and our mountain-grown wines.">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand-mark" aria-label="Model Farm home">
+      <strong>Model&nbsp;Farm</strong>
+      <span>California Mountain Wines</span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="wines.html">Wines</a>
+      <a href="about.html">About</a>
+      <a href="trade.html">Trade</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="page-intro">
+    <div class="page-kicker">About</div>
+    <h1 class="page-title">Where vineyard work comes first.</h1>
+    <p class="page-sub">
+      Model Farm is a small project focused on mountain-grown Cabernet, Chardonnay, Syrah, and rosé from coastal California.
+      We work with heritage sites, native fermentations, and patient élevage to make wines that feel both grounded and alive.
+    </p>
+  </section>
+
+  <div class="rule"></div>
+
+  <section style="margin:26px 0 18px; max-width:60ch; font-size:var(--step-0); color:var(--stone);">
+    <p>
+      We came to wine through curiosity, night shifts, and a belief that farming still matters. The work starts in old vines
+      on steep hillsides, following the rhythm of each season rather than a fixed recipe.
+    </p>
+    <p>
+      In the cellar, we keep things simple: native fermentations, gentle handling, long lees contact, and time. The goal is not to style
+      the wines into something fashionable, but to give each site enough space to speak for itself.
+    </p>
+    <p>
+      Model Farm exists for people who care where things come from and how they are made. If that is you, you are already part of the story.
+    </p>
+  </section>
+
+  <div class="rule"></div>
+
+  <footer class="reveal" style="transition-delay:120ms">
+    <div class="foot-grid">
+      <div>© <span id="yr"></span> Model Farm • California</div>
+      <nav style="display:flex; gap:14px; flex-wrap:wrap;">
+        <a class="minlink" href="index.html">Home</a>
+        <a class="minlink" href="wines.html">Wines</a>
+        <a class="minlink" href="trade.html">Trade</a>
+      </nav>
+    </div>
+  </footer>
+</main>
+
+<script>
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('is-in');}); return; }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){ entry.target.classList.add('is-in'); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(function(el){ io.observe(el); });
+  })();
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Model Farm — Trade</title>
+<meta name="description" content="Technical information and allocations for distributors and the wine trade.">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand-mark" aria-label="Model Farm home">
+      <strong>Model&nbsp;Farm</strong>
+      <span>California Mountain Wines</span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="wines.html">Wines</a>
+      <a href="about.html">About</a>
+      <a href="trade.html">Trade</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="page-intro">
+    <div class="page-kicker">Trade</div>
+    <h1 class="page-title">Tools for the people who pour.</h1>
+    <p class="page-sub">
+      Sell sheets, tech notes, and allocation details for distributors, retailers, and restaurants working with Model Farm.
+    </p>
+  </section>
+
+  <div class="rule"></div>
+
+  <section style="margin:26px 0 18px; max-width:60ch; font-size:var(--step-0); color:var(--stone);">
+    <p>
+      For full tech sheets, pricing, and current availability, please email us directly and we will share the latest portfolio kit.
+    </p>
+    <p>
+      We work closely with a small group of distributors and on-premise partners. If you are interested in bringing Model Farm into your market
+      or onto your list, we would be glad to talk.
+    </p>
+    <p>
+      Contact: <a href="mailto:info@modelfarmwines.com">info@modelfarmwines.com</a>
+    </p>
+  </section>
+
+  <div class="rule"></div>
+
+  <footer class="reveal" style="transition-delay:120ms">
+    <div class="foot-grid">
+      <div>© <span id="yr"></span> Model Farm • California</div>
+      <nav style="display:flex; gap:14px; flex-wrap:wrap;">
+        <a class="minlink" href="index.html">Home</a>
+        <a class="minlink" href="wines.html">Wines</a>
+        <a class="minlink" href="about.html">About</a>
+      </nav>
+    </div>
+  </footer>
+</main>
+
+<script>
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('is-in');}); return; }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){ entry.target.classList.add('is-in'); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(function(el){ io.observe(el); });
+  })();
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
